@@ -11,6 +11,7 @@ train_data_dir = os.path.join(os.getcwd(), 'datasets')
 print(train_data_dir)
 
 # 前処理の設定
+# TODO: もう少し大きい画像に対応する（現在 32x32）
 img_height = 32
 img_width = 32
 batch_size = 32
@@ -41,6 +42,8 @@ model.summary()
 model.compile(loss='categorical_crossentropy', optimizer='adam')
 
 # 雑に学習
+# TODO: EarlyStopping を利用する
+# TODO: validation_data を利用する
 nb_epochs = 100
 model.fit_generator(
     train_generator,
